@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>GourmetBites | WhatsApp Food Delivery</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2330d",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221310",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", 
+                        "lg": "0.5rem", 
+                        "xl": "0.75rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+        }
+        .material-symbols-outlined { 
+            vertical-align: middle; 
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#181211] dark:text-white transition-colors duration-300">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        
+        <!-- ==================== HEADER/NAVBAR ==================== -->
+        <header class="fixed top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-solid border-[#f5f1f0] dark:border-[#3d2a26] px-6 lg:px-40 py-4">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="size-8 text-primary">
+                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-extrabold tracking-tight">GourmetBites</h2>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="hidden md:flex items-center gap-10">
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#menu">Menu</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#why-us">Why Us</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#reviews">Reviews</a>
+                    <button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 transition-all">
+                        Order Now
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- ==================== MAIN CONTENT ==================== -->
+        <main class="flex-1 pt-24">
+            
+            <!-- ---------- HERO SECTION ---------- -->
+            <section class="max-w-7xl mx-auto px-6 lg:px-40 py-12 lg:py-24">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Hero Content -->
+                    <div class="flex flex-col gap-8 order-2 lg:order-1">
+                        <div class="space-y-4">
+                            <span class="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest rounded-full">
+                                Fastest Delivery in Town
+                            </span>
+                            <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1]">
+                                Savor the Flavors, <span class="text-primary">Delivered Fresh</span>
+                            </h1>
+                            <p class="text-lg text-[#8a6760] dark:text-[#c4b5b2] max-w-lg leading-relaxed">
+                                Quick & easy ordering via WhatsApp. No apps, no fees, no hassle. Just text us your order and we'll handle the rest!
+                            </p>
+                        </div>
+                        
+                        <!-- CTA Buttons -->
+                        <div  class="flex flex-col sm:flex-row gap-4 cursor-all-scroll">
+                            <button id="whatsapp-btn" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl text-lg font-bold shadow-xl shadow-primary/30 transition-all transform hover:scale-105 active:scale-95">
+                                <a href="#menu">
+                                    <span class="material-symbols-outlined">chat</span>
+                                    Order Now on WhatsApp
+                                </a>
+                            </button>
+                            <button class="flex items-center justify-center gap-2 bg-white dark:bg-[#3d2a26] border border-[#e6dddb] dark:border-[#4d3a36] px-8 py-4 rounded-xl text-lg font-bold hover:bg-[#f5f1f0] dark:hover:bg-[#4a342f] transition-all">
+                                <a href="#menu">View Menu</a>
+                            </button>
+                        </div>
+                        
+                        <!-- Social Proof -->
+                        <div class="flex items-center gap-4">
+                            <div class="flex -space-x-3">
+                                <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200" 
+                                     data-alt="Customer avatar 1" 
+                                     style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAvd3pDdkeWGdTsTFNCU4fIiO4C33h9PuHFm9VQHeHlj0nVvbBHUvq5b7NLTBKDeIu3b0SxWGaj1tdOaCrm1S3Q0VkwevWVHvTjDb_PCiwXtTV1AwYjTFaElWBk1KTmpDAZ3vV-aAjTja5WQE__nRe7L1YgvbrcEPiNn55srOgBkhBPMeaSmYVi67itdfMzmkOTKx3c_U-LMxvKYwD1HqCRLq2reeFw8v4Foa8fB6V9NQplSp98xbSF3L6_sdPBKYjxpJPPSCl4ra-c ')">
+                                </div>
+                                <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200" 
+                                     data-alt="Customer avatar 2" 
+                                     style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdjdRUK2NbvfCCeLUdJXhN2C6K3PRM_WQySq3WWg5jp4ttTiTiSC5kwYNfiI4mta7V1ClYY-kRZXEcS6qtI3of5T_4QMoHiL-9UBDUnItaYRwqp3-irTUMwYWI4x_2O_3fvbELjawOb8McL8vl6ucMv8uxKQShQJR4c1_H4a_sUKreGGvmjRnbJ7ZaZydgBqh_q3sN7wv0ZGIFocJYwiwoMcpYs1XCmuBqTmpztonqzz1ZCjTK4JcNTGD4lNTyIrs-quTmO9-9DoMb ')">
+                                </div>
+                                <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200" 
+                                     data-alt="Customer avatar 3" 
+                                     style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTU4g_0KbOQlgxgN7S0gu9ddzASlaK6VKuNHSmIl8d5LFp04lqQ9DQz_RPWXI52uM3JO0YtQ-MYVSvrkKdZpB2HM3G6wKfc7kaQQsa1CgHS7ZJVVZv0nJ8JhQoLECFEAYypnYOzhLQr_WyzO-9TqHaL39lc_fXJ2polVUdbSTnH2O7fdIfRc18-csmeCwBtJGMI7JPGWMeDnvxOFKSQ650CDbLBK0q3Zz6XT5RoZeCOHIhB5URBX6FIIyjuFXcu8ZzO6MRUjjKwh8K ')">
+                                </div>
+                            </div>
+                            <div class="text-sm">
+                                <div class="flex text-primary">
+                                    <span class="material-symbols-outlined text-[18px] fill-1">star</span>
+                                    <span class="material-symbols-outlined text-[18px] fill-1">star</span>
+                                    <span class="material-symbols-outlined text-[18px] fill-1">star</span>
+                                    <span class="material-symbols-outlined text-[18px] fill-1">star</span>
+                                    <span class="material-symbols-outlined text-[18px] fill-1">star</span>
+                                </div>
+                                <p class="font-bold text-[#181211] dark:text-white">Trusted by 500+ foodies</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Image -->
+                    <div class="order-1 lg:order-2">
+                        <div class="relative w-full aspect-square max-w-125 mx-auto">
+                            <div class="absolute inset-0 bg-primary/10 rounded-full blur-3xl"></div>
+                            <div class="relative w-full h-full rounded-2xl bg-center bg-cover shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 overflow-hidden" 
+                                 data-alt="Gourmet beef burger with fresh toppings" 
+                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZR9CK-7mZmLql3MDOP8KAAj5XvuaYdAghpERWNuEwOHZEUFO11iC9LfSxpaXmabHHawi8PpEqtKUnjgxwm-Mr0xdRlW7dyIkmF4j2JpmZFaNJr-pyC2L1E1eDjU5SAxz3Uf4AB4BKjvXo1oPQnxBwEGhaquN6EAhUoMkQhiXyWbF6bMuXOfJZtpjs9n-oVHSEYb0Nl-SP5nxNc_6vfQ0qhE0SCOPDW6t5V97H9I-av4poeVdUQ43_pCC6wXjPzD6Ez0KOhBdrzzbD ');">
+                            </div>
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute -bottom-6 -left-6 bg-white dark:bg-background-dark p-4 rounded-2xl shadow-xl border border-[#f5f1f0] dark:border-[#3d2a26] flex items-center gap-3">
+                                <div class="size-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                    <span class="material-symbols-outlined text-3xl">moped</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-[#8a6760] uppercase">Delivery</p>
+                                    <p class="text-sm font-extrabold">Under 30 mins</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------- POPULAR MENU SECTION ---------- -->
+            <section class="bg-white dark:bg-background-dark/30 py-24" id="menu">
+                <div class="max-w-1280px mx-auto px-6 lg:px-40">
+                    
+                    <!-- Section Header -->
+                    <div class="flex justify-between items-end mb-12">
+                        <div class="space-y-2">
+                            <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight">Our Popular Dishes</h2>
+                            <p class="text-[#8a6760] dark:text-[#c4b5b2]">Handpicked favorites for our regular guests</p>
+                        </div>
+                        <button id="full-menu-btn" class=" sm:flex text-primary font-bold items-center gap-1 hover:underline" id="view-menu-btn">
+                            Full Menu <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Menu Grid -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Card 1: Spicy Wings -->
+                        <div class="group bg-background-light dark:bg-[#2d1b18] rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-primary/20">
+                            <div class="aspect-[4/3] bg-center bg-cover transition-transform group-hover:scale-105" 
+                                 data-alt="Crispy spicy chicken wings with dipping sauce" 
+                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmcBcP-9w3Fsb9t3Z37TA8pnXN-EbKOQzRMaEjllLDB7y3lOlNe5C3Jxy93miD0XNJN-9uZjgpK1kvgNN9XXgoHHsQCkGfzQGvL0VmQIOZic5IBwMDoemr8spR0OF2w4uddHCmZiANIKmcPb0bG65x07Kx-P5QTTPgrPldmCIc4bIk32QY1OHz5e4-uWgbo0jl3H3MMmjKaRYzmXu92XPnoJXnuXmlV7i0den_wi1BcVc8trlHLuCbMpxP0pEk466VqRr1ZT1ricCq ');">
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="text-xl font-bold">Spicy Wings</h3>
+                                    <span class="text-primary font-extrabold text-lg">$12.99</span>
+                                </div>
+                                <p class="text-sm text-[#8a6760] dark:text-[#c4b5b2] leading-relaxed">
+                                    Crispy wings tossed in our signature hot sauce, served with cool celery and ranch.
+                                </p>
+                                <button class="add-to-order w-full bg-primary/10 group-hover:bg-primary group-hover:text-white text-primary font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2"
+                                        data-name="Loaded Fries"
+                                        data-price="$8.00">
+                                    <span class="material-symbols-outlined text-[20px]">add</span> 
+                                    Add to Order
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Classic Burger -->
+                        <div class="group bg-background-light dark:bg-[#2d1b18] rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-primary/20">
+                            <div class="aspect-[4/3] bg-center bg-cover transition-transform group-hover:scale-105" 
+                                 data-alt="Double patty angus beef burger with cheese" 
+                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCyrTRCN5GWrTUlHq2SZ_mybMc4w-i8mJixKJyxegp2ssqVu0qhKMLl9V4vhqEMU1QrU5Q0kkBn7nAYiHWRc50QEYmlw5SHVzhKotfcy1-F7NRpiWzQ1xgjYiYYuE4YNfaw3y1DGTjUoaFygJg-PMCET-deC6CMtY6IjF2ZDqf5b6q6SpbvmmQ-tZA9cy0mNd9597JM8AylSy1D0GszL2kgqsJmFp5QUL9EFgv2LXMd5htuPf0ZLpOpZAnJxWnPX2Mdvr-YocpL3eJ ');">
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="text-xl font-bold">Classic Burger</h3>
+                                    <span class="text-primary font-extrabold text-lg">$15.50</span>
+                                </div>
+                                <p class="text-sm text-[#8a6760] dark:text-[#c4b5b2] leading-relaxed">
+                                    Double-patty angus beef with melted cheddar, crisp lettuce, and our secret sauce.
+                                </p>
+                                <button class="add-to-order w-full bg-primary/10 group-hover:bg-primary group-hover:text-white text-primary font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2"
+                                        data-name="classic burger"
+                                        data-price="$15.50">
+                                    <span class="material-symbols-outlined text-[20px]">add</span> 
+                                    Add to Order
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Loaded Fries -->
+                        <div class="group bg-background-light dark:bg-[#2d1b18] rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-primary/20">
+                            <div class="aspect-[4/3] bg-center bg-cover transition-transform group-hover:scale-105" 
+                                 data-alt="Golden fries with cheese and bacon toppings" 
+                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBX6ZEeoutjyzitqCxQ-O3h7ZikChkUl6d-kIh1wk7EjXM9OGPMWhvtj5rJY-1cV-nLxQr4FuzVtGCHw4ePyg--NVTZc1wUBsQyj6pqgxVReevPoj6S8PGSuqWUeE5TtJY4kkLdlVSAmA4x5eV3mpnr0wOUz-gbd180Byjc6Yg8HPaW-f7AkGb0S3Tzzy8DJVHhTfASRXiIhr0Xo8EAkbup0mvXS3bscCKKSCBzvbKkLbWxTF_qbIsBN6278KUQFtH_6rIQru7CWdFO ');">
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="text-xl font-bold">Loaded Fries</h3>
+                                    <span class="text-primary font-extrabold text-lg">$8.00</span>
+                                </div>
+                                <p class="text-sm text-[#8a6760] dark:text-[#c4b5b2] leading-relaxed">
+                                    Golden crispy fries topped with melted cheese, smoked bacon, and fresh chives.
+                                </p>
+                                <button class="add-to-order w-full bg-primary/10 group-hover:bg-primary group-hover:text-white text-primary font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2"
+                                        data-name="Spicy Wings"
+                                        data-price="$12.99"
+                                    >
+                                    <span class="material-symbols-outlined text-[20px]">add</span> 
+                                    Add to Order
+                                </button>
+                            </div>
+                        </div>
+
+                         <!-- Card 4: Loaded Fries -->
+                         <div class="menu-extra hidden group bg-background-light dark:bg-[#2d1b18] rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-primary/20 " >
+                            <div class="aspect-[4/3] bg-center bg-cover transition-transform group-hover:scale-105" 
+                                 data-alt="Golden fries with cheese and bacon toppings" 
+                                 style="background-image: url('https://plus.unsplash.com/premium_photo-1733259709671-9dbf22bf02cc?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="text-xl font-bold">Loaded Fries</h3>
+                                    <span class="text-primary font-extrabold text-lg">$20.00</span>
+                                </div>
+                                <p class="text-sm text-[#8a6760] dark:text-[#c4b5b2] leading-relaxed">
+                                    Golden crispy fries topped with melted cheese, smoked bacon, and fresh chives.
+                                </p>
+                                <button class="add-to-order w-full bg-primary/10 group-hover:bg-primary group-hover:text-white text-primary font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2"
+                                        data-name="pazza"
+                                        data-price="$20.99">
+                                    <span class="material-symbols-outlined text-[20px]">add</span> 
+                                    Add to Order
+                                </button>
+                            </div>
+                        </div>
+
+                         <!-- Card 5: Loaded Fries -->
+                         <div class="menu-extra hidden group bg-background-light dark:bg-[#2d1b18] rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-primary/20 " >
+                            <div class="aspect-[4/3] bg-center bg-cover transition-transform group-hover:scale-105" 
+                                 data-alt="Golden fries with cheese and bacon toppings" 
+                                 style="background-image: url('https://images.unsplash.com/photo-1484723091739-30a097e8f929?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D ');">
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="text-xl font-bold">Loaded Fries</h3>
+                                    <span class="text-primary font-extrabold text-lg">$15.00</span>
+                                </div>
+                                <p class="text-sm text-[#8a6760] dark:text-[#c4b5b2] leading-relaxed">
+                                    Golden crispy fries topped with melted cheese, smoked bacon, and fresh chives.
+                                </p>
+                                <button class="add-to-order w-full bg-primary/10 group-hover:bg-primary group-hover:text-white text-primary font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2"
+                                        data-name="Spicy Wings"
+                                        data-price="$15.00">
+                                    <span class="material-symbols-outlined text-[20px]">add</span> 
+                                    Add to Order
+                                </button>
+                            </div>
+                        </div>
+
+                         <!-- Card 6: Loaded Fries -->
+                         <div class="menu-extra hidden group bg-background-light dark:bg-[#2d1b18] rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-transparent hover:border-primary/20 " >
+                            <div class="aspect-[4/3] bg-center bg-cover transition-transform group-hover:scale-105" 
+                                 data-alt="Golden fries with cheese and bacon toppings" 
+                                 style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D ');">
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <h3 class="text-xl font-bold">Loaded Fries</h3>
+                                    <span class="text-primary font-extrabold text-lg">$8.00</span>
+                                </div>
+                                <p class="text-sm text-[#8a6760] dark:text-[#c4b5b2] leading-relaxed">
+                                    Golden crispy fries topped with melted cheese, smoked bacon, and fresh chives.
+                                </p>
+                                <button class="add-to-order w-full bg-primary/10 group-hover:bg-primary group-hover:text-white text-primary font-bold py-3 rounded-xl transition-all flex items-center justify-center gap-2"
+                                        data-name="Spicy Wings"
+                                        >
+                                    <span class="material-symbols-outlined text-[20px]">add</span> 
+                                    Add to Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Modal -->
+                <div id="orderModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-50">
+                    <div class="bg-white rounded-xl p-6 w-80 shadow-lg text-center relative">
+                        <h2 id="modalItemName" class="text-orange-600 font-bold text-lg mb-2"></h2>
+                        <p id="modalItemPrice" class="text-gray-700 mb-4"></p>
+                        
+                        <div class="flex items-center justify-center mb-6">
+                            <button id="decrementBtn" class="border rounded-full px-3 py-1 text-orange-600 text-xl">-</button>
+                            <span id="quantity" class="mx-4 text-lg font-bold">1</span>
+                            <button id="incrementBtn" class="border rounded-full px-3 py-1 text-orange-600 text-xl">+</button>
+                        </div>
+
+                        <button id="confirmBtn" class="bg-orange-600 text-white px-6 py-2 rounded-lg w-full font-bold mb-2">Confirm & Send</button>
+                        <button id="cancelBtn" class="text-gray-500 text-sm">Cancel</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------- WHY CHOOSE US SECTION ---------- -->
+            <section class="py-24 max-w-1280px mx-auto px-6 lg:px-40" id="why-us">
+                <div class="text-center mb-16 space-y-4">
+                    <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight">Why Choose Us?</h2>
+                    <p class="text-[#8a6760] dark:text-[#c4b5b2] max-w-2xl mx-auto">
+                        We pride ourselves on the quality of our food and the speed of our delivery. Experience the best dining experience from the comfort of your home.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-white dark:bg-[#2d1b18] p-8 rounded-3xl border border-[#e6dddb] dark:border-[#4d3a36] flex flex-col items-center text-center gap-6 group hover:border-primary transition-colors">
+                        <div class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-4xl">eco</span>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold">Fresh Ingredients</h3>
+                            <p class="text-sm text-[#8a6760] dark:text-[#c4b5b2]">Hand-picked daily from local organic farms to ensure the best flavor in every bite.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-white dark:bg-[#2d1b18] p-8 rounded-3xl border border-[#e6dddb] dark:border-[#4d3a36] flex flex-col items-center text-center gap-6 group hover:border-primary transition-colors">
+                        <div class="size-16 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-500 group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-4xl">speed</span>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold">Fast Delivery</h3>
+                            <p class="text-sm text-[#8a6760] dark:text-[#c4b5b2]">Hot food at your door within 30 minutes, or it's on us! We prioritize your hunger.</p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-white dark:bg-[#2d1b18] p-8 rounded-3xl border border-[#e6dddb] dark:border-[#4d3a36] flex flex-col items-center text-center gap-6 group hover:border-primary transition-colors">
+                        <div class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-4xl">payments</span>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-xl font-bold">Best Prices</h3>
+                            <p class="text-sm text-[#8a6760] dark:text-[#c4b5b2]">Premium restaurant taste without the high-end price tag. Affordable luxury for everyone.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------- REVIEWS SECTION ---------- -->
+            <section class="bg-background-dark text-white py-24" id="reviews">
+                <div class="max-w-1280px mx-auto px-6 lg:px-40">
+                    <div class="grid lg:grid-cols-2 gap-16 items-center">
+                        
+                        <!-- Stats -->
+                        <div class="space-y-8">
+                            <div class="space-y-4">
+                                <h2 class="text-4xl font-extrabold tracking-tight">What Our Happy Customers Say</h2>
+                                <p class="text-[#c4b5b2] text-lg">We've served thousands of meals and the feedback is consistently amazing.</p>
+                            </div>
+                            <div class="flex gap-12">
+                                <div>
+                                    <p class="text-4xl font-black text-primary">4.9/5</p>
+                                    <p class="text-sm text-[#c4b5b2] uppercase font-bold tracking-widest mt-1">Rating</p>
+                                </div>
+                                <div>
+                                    <p class="text-4xl font-black text-primary">500+</p>
+                                    <p class="text-sm text-[#c4b5b2] uppercase font-bold tracking-widest mt-1">Reviews</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial Card -->
+                        <div class="bg-[#2d1b18] p-8 rounded-3xl border border-[#4d3a36] relative">
+                            <span class="material-symbols-outlined text-6xl text-primary/20 absolute top-4 right-8">format_quote</span>
+                            <div class="space-y-6">
+                                <div class="flex text-orange-400">
+                                    <span class="material-symbols-outlined fill-1">star</span>
+                                    <span class="material-symbols-outlined fill-1">star</span>
+                                    <span class="material-symbols-outlined fill-1">star</span>
+                                    <span class="material-symbols-outlined fill-1">star</span>
+                                    <span class="material-symbols-outlined fill-1">star</span>
+                                </div>
+                                <p class="text-lg italic leading-relaxed">
+                                    "The WhatsApp ordering is literally a game changer. No apps to download, just sent a message and had a hot burger at my door in 20 minutes. Best service in the city!"
+                                </p>
+                                <div class="flex items-center gap-4">
+                                    <div class="size-12 rounded-full bg-slate-400" 
+                                         data-alt="Reviewer portrait" 
+                                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3fWQJ_zD64iu5f5qnSBblaVeEjZyXKqYXsuYRuwpMa4yEkd08QIAr_JzqkOHRsqjJEfa1aQu-d7MXns-1UsRa9qdTaytThFK1SStuBmLNmb_Bb3ARdepS-DsGKipD7y7iu1uS8mK8eFxGFtPtjVhR3kZNIrlteo1Wi9UThH_xjc7JAYNFA86OTl3MolN0gEq_2Sa64u7mDEcm_hkH1mZxg47x4HgRow3754v9S_xCt3qtGId6ZlX9Tv8RoqFMn7Fja1JDzhwxnXkN ');">
+                                    </div>
+                                    <div>
+                                        <p class="font-bold">Sarah Jenkins</p>
+                                        <p class="text-xs text-[#c4b5b2]">Loyal Customer since 2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------- BOTTOM CTA SECTION ---------- -->
+            <section class="py-24 bg-primary text-white text-center relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-black/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+                
+                <div class="relative z-10 max-w-200 mx-auto px-6 space-y-10">
+                    <h2 class="text-5xl lg:text-7xl font-black tracking-tight">Hungry yet?</h2>
+                    <p class="text-xl text-white/90">Your favorite meal is just one message away. Send us a 'Hello' and get 10% off your first order!</p>
+                    <button id="whatsapp-btn2" class="bg-white text-primary px-12 py-5 rounded-2xl text-2xl font-black shadow-2xl hover:scale-105 transition-transform flex items-center justify-center gap-4 mx-auto w-full max-w-100 sm:w-auto">
+                        <span class="material-symbols-outlined text-4xl">chat</span>
+                        Order via WhatsApp
+                    </button>
+                    <p class="text-sm font-bold opacity-80 uppercase tracking-widest">Available 11 AM - 10 PM Daily</p>
+                </div>
+            </section>
+
+            <!-- ---------- FOOTER SECTION ---------- -->
+            <footer class="bg-background-light dark:bg-background-dark pt-24 pb-12 border-t border-[#e6dddb] dark:border-[#3d2a26]">
+                <div class="max-w-7xl mx-auto px-6 lg:px-40">
+                    <div class="grid lg:grid-cols-2 gap-16 mb-24">
+                        
+                        <!-- Contact Info -->
+                        <div class="space-y-10">
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-3">
+                                    <div class="size-8 text-primary">
+                                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"></path>
+                                        </svg>
+                                    </div>
+                                    <h2 class="text-2xl font-black tracking-tight">GourmetBites</h2>
+                                </div>
+                                <p class="text-[#8a6760] dark:text-[#c4b5b2] leading-relaxed max-w-sm">
+                                    Bringing restaurant quality dining to your doorstep through the simplicity of chat.
+                                </p>
+                            </div>
+                            
+                            <div class="grid sm:grid-cols-2 gap-8">
+                                <!-- Contact -->
+                                <div class="space-y-4">
+                                    <h4 class="font-black uppercase tracking-widest text-sm text-primary">Contact Us</h4>
+                                    <div class="space-y-2">
+                                        <p class="flex items-center gap-2 font-bold">
+                                            <span class="material-symbols-outlined text-primary">phone</span> 
+                                            +212(06) 123-4567
+                                        </p>
+                                        <p class="flex items-center gap-2 font-bold">
+                                            <span class="material-symbols-outlined text-primary">mail</span> 
+                                            hello@gourmetbites.com
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Hours -->
+                                <div class="space-y-4">
+                                    <h4 class="font-black uppercase tracking-widest text-sm text-primary">Working Hours</h4>
+                                    <div class="space-y-1 text-sm text-[#8a6760] dark:text-[#c4b5b2]">
+                                        <p>Mon - Fri: 11:00 AM - 10:00 PM</p>
+                                        <p>Sat - Sun: 10:00 AM - 11:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="h-100 w-full rounded-3xl overflow-hidden border-4 border-white dark:border-[#3d2a26] shadow-xl relative group">
+                            <div class="w-full h-full bg-[#e6dddb] flex items-center justify-center bg-center bg-cover" 
+                                 data-alt="Map showing restaurant location in NYC" 
+                                 data-location="New York City" 
+                                 style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_AUDVq0SZN0lnLMFhaJWx1zhkep8W_kfRrfYpcT5zFRtOqHnWdxKZkFBPvCc8HFFNlE5TsFbpRZEbPE2sv6DP0YnYQGtPacmWaLeC8QLwRrJMaRWmpOCL1DpiSIzMV3_f5hTMmQKjGcH2vJ0j4ZQSitlLYw3yWwGmXrdAdmNteLhf-mmXL8-Etf0iOrnd-CycW872YeTwms4LM2uf5p8IIf6IIbHwGGRgKGGLbR_ccq4PKU0m56_OQin96XsOUdhyGJdTNQn5eIPp ');">
+                                <div class="absolute inset-0 bg-primary/10 transition-opacity group-hover:opacity-0"></div>
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-background-dark px-4 py-2 rounded-lg shadow-xl border border-primary text-xs font-black">
+                                    Find Us Here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Copyright -->
+                    <div class="pt-8 border-t border-[#e6dddb] dark:border-[#3d2a26] flex flex-col md:flex-row justify-between items-center gap-6">
+                        <p class="text-xs text-[#8a6760] dark:text-[#c4b5b2]">© 2024 GourmetBites Delivery. All rights reserved.</p>
+                        <div class="flex gap-6">
+                            <a class="text-primary hover:opacity-80" href="#">
+                                <span class="material-symbols-outlined">public</span>
+                            </a>
+                            <a class="text-primary hover:opacity-80" href="#">
+                                <span class="material-symbols-outlined">share</span>
+                            </a>
+                            <a class="text-primary hover:opacity-80" href="#">
+                                <span class="material-symbols-outlined">camera</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- ==================== STICKY WHATSAPP BUTTON ==================== -->
+    <a class="fixed bottom-8 right-8 z-100 bg-primary text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center" 
+       href="https://wa.me/+212608173585" 
+       target="_blank" 
+       aria-label="Order via WhatsApp">
+        <span class="material-symbols-outlined text-4xl">chat</span>
+    </a>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="./js/app.js"></script>
+
+</body>
+</html>
