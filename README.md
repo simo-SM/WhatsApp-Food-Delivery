@@ -6,7 +6,7 @@ Built with **HTML**, **Tailwind CSS**, and **Vanilla JavaScript** — no framewo
 
 ---
 
-## 🚀 Features
+## Features
 
 - 📱 **Direct WhatsApp Ordering**
 - 🛒 Add items to order dynamically
@@ -17,7 +17,7 @@ Built with **HTML**, **Tailwind CSS**, and **Vanilla JavaScript** — no framewo
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 1. User selects food items by clicking **Add to Order**
 2. Selected items appear in the order box
@@ -26,7 +26,7 @@ Built with **HTML**, **Tailwind CSS**, and **Vanilla JavaScript** — no framewo
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **HTML5**
 - **Tailwind CSS**
