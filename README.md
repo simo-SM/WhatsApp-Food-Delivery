@@ -1,5 +1,6 @@
-# 🍔 WhatsApp Food Ordering Website
-
+#  WhatsApp Food Ordering Website
+![image alt]([https://github.com/simo-SM/shellpool1337/blob/73c6189225272c5f48f2c21fd0878cbb9d1507ed/Web%201920%20%E2%80%93%201.png](https://github.com/simo-SM/WhatsApp-Food-Delivery/blob/ac5d80b58cd232bbe032afcdcaa7cf4caf5572e3/imageProject.png))
+---
 A modern and responsive food ordering website that allows users to select meals and place orders directly via **WhatsApp**.  
 Built with **HTML**, **Tailwind CSS**, and **Vanilla JavaScript** — no frameworks, no backend, fast and lightweight.
 
